@@ -1,0 +1,362 @@
+html,body {
+    font-family: 'Microsoft YaHei',sans-serif;
+    height: 100%;
+    background: #fecc32;
+}
+
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.tt {
+    background-color: blue
+}
+
+.outer {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #fecc32;
+    font-size: 0;
+    position: relative;
+}
+
+.banner {
+    width: 100%;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.outer.show {
+    opacity: 1;
+    transition: opacity .3s ease;
+}
+
+.page-bg {
+    width: 100%;
+}
+
+.turntable-box {
+    width: 100%;
+    margin: auto;
+}
+
+.turntable-box1 {
+    background: url("http://file1.leley.org/static/activity/cms/59c350a388f188b93ebbba95/img/bg_choice-prize.png") no-repeat;
+    background-size: 100%;
+    height: 3.2rem;
+    position: relative
+}
+
+.squareBox {
+    margin: 0 auto;
+    position: absolute;
+    left: .82rem;
+    top: .68rem;
+}
+
+.squareBox ul {
+    margin: 0 auto 0;
+    position: relative;
+    overflow: hidden;
+    background-color: black
+}
+
+.squareBox li {
+    width: .67rem;
+    height: .67rem;
+    text-align: center;
+    line-height: .67rem;
+    font-size: .13rem;
+    font-weight: bold;
+    color: #000;
+    background: white;
+}
+
+.squareBox li:nth-of-type(1) {
+    left: 0;
+    top: 0
+}
+
+.squareBox li:nth-of-type(2) {
+    left: .72rem;
+    top: 0
+}
+
+.squareBox li:nth-of-type(3) {
+    left: 1.44rem;
+    top: 0
+}
+
+.squareBox li:nth-of-type(4) {
+    left: 1.44rem;
+    top: .72rem
+}
+
+.squareBox li:nth-of-type(5) {
+    left: 1.44rem;
+    top:1.44rem;
+}
+
+.squareBox li:nth-of-type(6) {
+    left: .72rem;
+    top:1.44rem;
+}
+
+.squareBox li:nth-of-type(7) {
+    left: 0px;
+    top:1.44rem;
+}
+
+.squareBox li:nth-of-type(8) {
+    left: 0px;
+    top: .72rem
+}
+
+.squareBox li.on {
+    background: red
+}
+
+.text {
+    height: 50px;
+    overflow: hidden;
+    width: 500px;
+    margin: 20px auto 0;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.chance-box {
+    width: 100%;
+    height: .4rem;
+    background-color: #FCBB15;
+    color: #000;
+    font-size: .18rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: .4rem;
+}
+
+.btn-box {
+    height: .4rem;
+    padding: 0 .3rem;
+}
+
+.btn-box img {
+    width: 1rem;
+    padding: 0.11rem .28rem 0;
+}
+
+.suprise-box {
+    width: 100%;
+    text-align: center;
+    margin-top: .3rem
+}
+
+.suprise-box img {
+    width: 100%
+}
+
+.consult {
+    text-align: center;
+    padding: .11rem 0 .2rem 0
+}
+.consult img{
+    width: 1rem;
+}
+.jg,.zt {
+    float: left;
+    width: 200px;
+}
+
+.bt {
+    cursor: pointer;
+    position: absolute;
+    top: .72rem;
+    left: .72rem;
+    text-align: center;
+    background: none;
+    border: none;
+}
+
+.bt img {
+    width: .67rem;
+    height: .67rem
+}
+
+em {
+    font-size: .2rem;
+    font-style: normal;
+    color: red;
+}
+
+.turntable-box2 {
+    position: relative
+}
+
+.lottery-case {
+    overflow: hidden;
+}
+
+.lottery-box {
+    width: 3.7rem;
+    height: 3.7rem;
+    margin: 0 auto;
+    position: relative;
+    background: url(http://file1.leley.org/static/activity/cms/59c350a388f188b93ebbba95/img/zhuanpan1_wai.png) no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+.lottery-box .lottery-img {
+    width: 3.3rem;
+    height: 3.3rem;
+    position: relative;
+    background: url(http://file1.leley.org/static/activity/cms/59c350a388f188b93ebbba95/img/zhuanpan1_zhong.png) no-repeat;
+    left: .22rem;
+    top: .12rem;
+    background-size: 100%;
+}
+
+.lottery-box .playbtn {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(http://file1.leley.org/static/activity/cms/59c350a388f188b93ebbba95/img/zhuanpan1_nei.png) no-repeat;
+    background-size: 100%;
+    border: none;
+}
+
+.turntable-box3 {
+}
+
+.lottery-box2 {
+    width: 3.7rem;
+    height: 3.7rem;
+    margin: 0 auto;
+    position: relative;
+    background: url(http://file1.leley.org/static/activity/cms/59c350a388f188b93ebbba95/img/zhuanpan_wai.png) no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+.lottery-box2 .lottery-img2 {
+    width: 3.4rem;
+    height: 3.4rem;
+    position: relative;
+    background: url(http://file1.leley.org/static/activity/cms/59c350a388f188b93ebbba95/img/zhuanpan_zhong.png) no-repeat;
+    left: .17rem;
+    top: .11rem;
+    background-size: 100%;
+}
+
+.lottery-box2 .playbtn2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(http://file1.leley.org/static/activity/cms/59c350a388f188b93ebbba95/img/zhuanpan_nei.png) no-repeat;
+    background-size: 100%;
+    border: none;
+}
+
+.vip-chance {
+    height: 1rem;
+    background-color: transparent;
+    margin: .1rem 0 .62rem 0;
+}
+
+.decorate1 {
+    position: absolute;
+    right: 0;
+    top: .4rem;
+}
+
+.decorate1 img {
+    width: 1rem;
+    height: 1.3rem;
+}
+
+.decorate2 {
+    position: absolute;
+    left: 0;
+    bottom: 0.6rem;
+}
+
+.decorate3 {
+    position: absolute;
+    right: 0;
+    bottom: 0.6rem;
+}
+
+.decorate2 img,.decorate3 img {
+    height: 1.6rem;
+}
+
+.rules-box {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    margin:0 auto;
+}
+.rules-content{
+    display: none;
+    width: 84%;
+    height: 3.3rem;
+    background: url(http://file1.leley.org/static/activity/cms/59c350a388f188b93ebbba95/img/pop_rule_bg.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 1.5rem auto;
+    color: #000;
+    font-size: .12rem;
+    text-align: left;
+    padding: .19rem .16rem;
+    line-height: .2rem;
+}
+.rules-box h5 {
+    font-size: .14rem;
+    font-weight: bold;
+    margin-bottom: .02rem;
+}
+.prize-detail{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    top:0;
+    left: 0;
+    display: none;
+}
+.prize-detail-content{
+    display: none;
+    width: 60%;
+    height: 3rem;
+    background: url("http://file1.leley.org/static/activity/cms/59c350a388f188b93ebbba95/img/pop_chakan_bg.png") no-repeat;
+    background-size: 100%;
+    margin: 1.8rem auto;
+    color: #fff;
+    font-size: .12rem;
+    text-align: left;
+    padding: .32rem .52rem .42rem .3rem;
+    line-height: .25rem;
+    overflow: hidden;
+}
+.prize-detail-text{
+    width:2.8rem;
+    height: 2rem;
+    overflow: auto;
+}
+.prize-detail-content p{
+    font-size: .14rem;
+    font-weight: bold;
+}

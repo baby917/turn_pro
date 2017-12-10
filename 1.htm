@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>幸运大转盘，转出好运来！</title>
+    <!-- build:css index.css -->
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/index.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="heavy_plugin/layer/layer.min.css">
+</head>
+<body>
+    <div class="outer">
+        <div class="banner">
+            <img src="img/banner.png">
+        </div>
+            <!--turnable1-->
+            <div class="turntable-box">
+                <div class="turntable-box1">
+                    <div class="squareBox">
+                        <ul class="cj1">
+                            <li>5元话费</li>
+                            <li>100金币</li>
+                            <li>80金币</li>
+                            <li>谢谢参与</li>
+                            <li>300金币</li>
+                            <li>10元话费</li>
+                            <li>100M流量</li>
+                            <li>500金币</li>
+                        </ul>
+                        <button class="bt bt1"><img src="img/free_cj.png"></button>
+                        <button class="bt bt2" style="display: none"></button>
+                    </div>
+                </div>
+                <div class="chance-box">
+                    <p>您有<em id="login"></em>次机会</p>
+                </div>
+                <div class="btn-box">
+                    <a href="javascript:void(0)" id="rules">
+                        <img src="img/btn_rule.png" alt="">
+                    </a>
+                    <a href="javascript:void(0)" id="see-prize">
+                        <img src="img/btn_prize.png">
+                    </a>
+                </div>
+            </div>
+            <!--turnable2-->
+            <div class="turntable-box turntable-box2">
+                <div class="suprise-box">
+                    <img src="img/order_surprise.png" alt="">
+                </div>
+                <div class="consult">
+                    <a href="javascript;"><img src="img/btn_zixun.png" alt=""></a>
+                </div>
+                <div class="lottery-case">
+                    <div class="lottery-box">
+                        <div class="lottery-img">
+                            <button class="playbtn" href="javascript:;" title="开始抽奖"></button>
+                        </div>
+                    </div>
+                    <div class="chance-box">
+                        <p>您有<em class="playnum" id="nomal"></em>次机会，下单抽奖</p>
+                    </div>
+                </div>
+                <div class="decorate1">
+                    <img src="img/zhuangshi.png">
+                </div>
+            </div>
+            <!--turnable3-->
+            <div class="turntable-box turntable-box3">
+                <div class="suprise-box">
+                    <img src="img/vip.png" alt="">
+                </div>
+                <div class="consult">
+                    <a href="javascript;"><img src="img/btn_zixun.png" alt=""></a>
+                </div>
+                <div class="lottery-case">
+                    <div class="lottery-box2">
+                        <div class="lottery-img2">
+                            <button class="playbtn2" href="javascript:;" title="开始抽奖"></button>
+                        </div>
+                    </div>
+                    <div class="chance-box vip-chance">
+                        <p>您有<em class="playnum2" id="vip"></em>次机会,</p><p>下单可抽奖</p>
+                    </div>
+                </div>
+            </div>
+        <div class="decorate2">
+            <img src="img/zs_l.png" alt="">
+        </div>
+        <div class="decorate3">
+            <img src="img/zs_r.png" alt="">
+        </div>
+        <!--弹窗1-->
+        <div class="rules-box">
+            <div class="rules-content">
+                <h5>规则内容:</h5>
+                <p>1、每日登录乐乐医或和生活乐乐医，普通用户可获得1次抽奖机会，乐乐医手机报会员可获得 3 次抽奖机会；奖品有限，先到先得。</p>
+                <p>2、普通用户付费咨询结束后可获得5元电子券，限5000名/月，每人每天限领1张；</p>
+                <p>3、乐乐医手机报会员付费咨询结束后可获得10元电子券，限2000名/月，每人每天限领1张；</p>
+                <p>4、用户所得电子券可前往“四川和小宝”客户端使用；</p>
+                <p>5、活动所赠金币，可登陆“四川移动和生活”兑换流量使用；</p>
+                <p>6、活动所赠流量将以流量券形式发放至用户账户中，当月有效，用户可前往“四川移动和生活”客户端激活卡券；</p>
+                <p>7、活动所赠话费于次月到账，具体可拨打 10086 查询；</p>
+                <p>8、本活动仅限四川移动用户，如有任何疑问请拨打客服电话：400-181-6106。</p>
+            </div>
+        </div>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.tmpl.js"></script>
+        <!--弹窗2-->
+        <div class="prize-detail">
+            <div class="prize-detail-content">
+                <div class="prize-detail-text">
+
+                </div>
+            </div>
+            <script type="text/html" id="prize-detail-tmpl">
+                <span>{{= data}}</span>
+                <p>{{= text}}</p>
+            </script>
+            <script type="text/javascript">
+                $("#see-prize").click(function () {
+                    $(".prize-detail-text").html("");
+                    cms.invoke("prizeDrawList",{debug:true},function (res) {
+                        $("#prize-detail-tmpl").tmpl(res.data).appendTo(".prize-detail-text");
+                    });
+                })
+            </script>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="http://file1.leley.org/static/activity/cms/common/activity.cms.lib.js?ver=1497003268086"></script>
+    <script>
+        var superInt = 0;
+        var prize={
+            "hf5":1,
+            "coin100":2,
+            "coin80":3,
+            "none0":4,
+            "coin300":5,
+            "hf10":6,
+            "flux100":7,
+            "coin500":8
+        }
+    </script>
+    <script src="js/luckDraw.js"></script>
+    <script>
+        var superInt2=0;
+        var prize2={
+            "hf10":1,
+            "flux300":2,
+            "hf50":3,
+            "coupon1000":4,
+            "hf30":5,
+            "coupon500":6,
+            "flux200":7,
+            "none0":8
+        }
+    </script>
+    <script src="js/luckDraw2.js"></script>
+    <script>
+        var superInt3=0;
+        var prize3={
+            "hf30":1,
+            "none0":2,
+            "flux200":3,
+            "coupon5000":4,
+            "hf50":5,
+            "coupon2000":6,
+            "flux500":7,
+            "hf10":8,
+            "flux300":9,
+            "coupon10000":10
+        }
+    </script>
+    <script src="js/luckDraw3.js"></script>
+    <script src="js/jquery.rotate.min.js"></script>
+    <script>
+        var activityId = "59c8cf9be4b092546cc09e74";
+        var baseUrl = "http://cms.leley.org:8090/";
+        var msiteUrl = "http://m.leley.org:8088/";
+        var apiUrl = "http://cms.leley.org:8090/ws/59c8cf9be4b092546cc09e74.do";
+        var apiPath = "http://cms.leley.org:8090/ws/59c8cf9be4b092546cc09e74.do";
+        var share = {};
+    </script>
+    <script>
+        var isLogin=false;
+        $('.consult a').click(function (e) {
+            e.preventDefault();
+            if('leley' == cms.clientType()){     //乐乐医
+                location.href='leley://doctorlist';
+            }else{
+                location.href='http://m.leley.com/index/more.do';
+            }
+        })
+        initPage();
+       //登录
+        function init() {
+            isLogin=true;
+            cms.invoke("init",{debug:true},function (res) {
+                if(res.code=="000"){
+                    if(res.data.isLogin){
+                        $("#login").html(res.data.counts.login);
+                        $("#nomal").html(res.data.counts.nomal);
+                        $("#vip").html(res.data.counts.vip)
+                    }else {
+                        alert("请登录！")
+                    }
+                }
+            })
+        }
+
+$(function () {
+    var prizeInfo ;
+//    one
+    $('.bt1').click(function () {
+        if(!isLogin)return;
+        var _this=this;
+        $(this).attr("disabled",true);
+        setTimeout(function () {
+            $(_this).attr("disabled",false)
+        },3000)
+        cms.invoke("prizedraw",{debug:true,type:"login"},function (res) {
+            if(res.code==="000"){
+                console.log(res.data.type);
+                superInt=prize[res.data.type];
+                console.log(superInt)
+                if (res.data.type== 'none0'){
+                    prizeInfo=res.data.text
+                }else {
+                    prizeInfo ="恭喜您获得"+  res.data.text;
+                }
+                $(".bt2").trigger("click");
+                suNumber("login");
+            }
+            else
+            {
+                layer.msg(res.msg)
+            }
+        })
+    });
+    $('.cj1').myLuckDraw({
+        row : 3, //行
+        column : 3, //列
+        spacing: 5, //空隙
+        click : '.bt2', //点击触发
+        time: 1 ,//匀速运动的时间
+        end:function  draw1() {
+            layer.msg(prizeInfo);
+        }
+    },superInt); //这里superInt是确定想要抽奖的目标是几号
+//    two
+    $(".playbtn").click(function () {
+        if(!isLogin)return;
+        var _this=$(this);
+        $(this).attr("disabled",true);
+        setTimeout(function () {
+            _this.attr("disabled",false)
+        },3000);
+        cms.invoke("prizedraw",{debug:true,type:"nomal"},function (res) {
+            if(res.code==="000"){
+                console.log(res.data.type);
+                superInt2=prize2[res.data.type];
+                console.log(superInt2);
+                if (res.data.type== 'none0'){
+                    prizeInfo=res.data.text
+                }else {
+                    prizeInfo ="恭喜您获得"+  res.data.text;
+                };
+                myRotate(_this,superInt2,prizeInfo);
+                suNumber("nomal");
+            }
+            else
+            {
+                layer.msg(res.msg)
+            }
+        })
+    });
+//        three
+    $(".playbtn2").click(function () {
+        var _this=$(this);
+        if(!isLogin)return;
+        $(this).attr("disabled",true);
+        setTimeout(function () {
+            _this.attr("disabled",false)
+        },3000);
+        cms.invoke("prizedraw",{debug:true,type:"vip"},function (res) {
+            if(res.code==="000"){
+                console.log(res.data.type);
+                superInt3=prize3[res.data.type];
+                console.log(superInt3);
+                if (res.data.type== 'none0'){
+                    prizeInfo=res.data.text
+                }else {
+                    prizeInfo ="恭喜您获得"+  res.data.text;
+                }
+                myRotate2(_this,superInt3,prizeInfo);
+                suNumber("vip");
+            }
+            else
+            {
+                layer.msg(res.msg)
+            }
+        })
+    })
+});
+        function suNumber(type){
+            switch (type){
+                case "login":$("#login").html($("#login").html()-1); break;
+                case "nomal":$("#nomal").html($("#nomal").html()-1); break;
+                case "vip":$("#vip").html($("#vip").html()-1); break;
+            }
+        }
+    </script>
+    <!-- endbuild -->
+    <script src="heavy_plugin/layer/layer.min.js"></script>
+</body>
+</html>
